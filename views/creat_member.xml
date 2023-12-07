@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="create_member_form_view">
+        <field name="name">department.form.view</field>
+        <field name="model">create.member</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="fname"/>
+                            <field name="lname"/>
+                            <field name="phone"/>
+                            <field name="star_date"/>
+                            <field name="fees"/>
+                        </group>
+                        <group>
+                            <field name="age"/>
+                            <field name="email"/>
+                            <field name="game"/>
+                            <field name="month"/>
+                            <button name="%(sports_game_action)d" string="See member" type="action" class="oe_highlight"></button>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="create_member_tree_view">
+        <field name="name">department.tree.view</field>
+        <field name="model">create.member</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="fname"/>
+                <field name="lname"/>
+                <field name="phone"/>
+                <field name="age"/>
+                <field name="email"/>
+                <field name="game"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_member_action" model="ir.actions.act_window">
+        <field name="name">create member</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">create.member</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="main_menu_sports_club"
+              name="Sports Club"
+              sequence="1"/>
+    <menuitem id="member_ship_menu"
+              name="Member ship"
+              parent="main_menu_sports_club"
+              sequence="10"/>
+    <menuitem id="create_member_menu"
+              name="Create Member"
+              parent="member_ship_menu"
+              action="create_member_action"
+              sequence="10"/>
+
+</odoo>

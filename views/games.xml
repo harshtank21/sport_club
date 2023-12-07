@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="games_form_view">
+        <field name="name">department.form.view</field>
+        <field name="model">sports.game</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="fees"/>
+                        <field name="members"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="games_tree_view">
+        <field name="name">department.tree.view</field>
+        <field name="model">sports.game</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="fees"/>
+                <field name="members"/>
+            </tree>
+        </field>
+    </record>
+    <record id="sports_game_action" model="ir.actions.act_window">
+        <field name="name">GAME</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sports.game</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="game_menu"
+              name="Games"
+              parent="main_menu_sports_club"
+              sequence="15"/>
+
+    <menuitem id="in_gemes_menu"
+              name="Add Games"
+              parent="game_menu"
+              action="sports_game_action"
+              sequence="10"/>
+</odoo>
