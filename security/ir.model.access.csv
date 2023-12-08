@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 sport_club.access_create_member,access_create_member,sport_club.model_create_member,base.group_user,1,1,1,1
 sport_club.access_sports_game,access_sports_game,sport_club.model_sports_game,base.group_user,1,1,1,1
-
+sport_club.access_games_fees,access_games_fees,sport_club.model_games_fees,base.group_user,1,1,1,1
 

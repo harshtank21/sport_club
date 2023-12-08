@@ -1,1 +1,1 @@
-from . import member_ship,game_s
+from . import member_ship,game_s,fees_reciept

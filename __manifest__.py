@@ -17,7 +17,8 @@ You could use this simplified accounting in case you work with an (external) acc
 
         'security/ir.model.access.csv',
         'views/creat_member.xml',
-        'views/games.xml'
+        'views/games.xml',
+        'views/fees_reciept.xml'
 
 
     ],

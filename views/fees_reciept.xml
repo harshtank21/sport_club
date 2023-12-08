@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record model="ir.ui.view" id="create_member_form_view">
+    <record model="ir.ui.view" id="games_fees_form_view">
         <field name="name">department.form.view</field>
-        <field name="model">create.member</field>
+        <field name="model">games.fees</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="oe_button_box">
+                        <span ><h1>sport club </h1> <h3>Receipt</h3></span>
+                        <hr/>
+                    </div>
                     <group>
                         <group>
                             <field name="name"/>
@@ -13,14 +17,15 @@
                             <field name="phone"/>
                             <field name="star_date"/>
                             <field name="fees"/>
+                            <field name="end_date"/>
                         </group>
                         <group>
                             <field name="age"/>
                             <field name="email"/>
                             <field name="game"/>
                             <field name="month"/>
-                            <button name="%(sports_game_action)d" string="See member" type="action" class="oe_highlight"></button>
-                            <field name="end_date"/>
+                            <field name="gst"/>
+                            <field name="youpaid"/>
                         </group>
                     </group>
                 </sheet>
@@ -28,38 +33,31 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="create_member_tree_view">
-        <field name="name">department.tree.view</field>
-        <field name="model">create.member</field>
+    <record model="ir.ui.view" id="games_fees_tree_view">
+        <field name="name">games.fees.tree.view</field>
+        <field name="model">games.fees</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="lname"/>
-                <field name="phone"/>
-                <field name="age"/>
-                <field name="email"/>
                 <field name="game"/>
+                <field name="fees"/>
+                <field name="month"/>
+                <field name="youpaid" readonly="True"/>
             </tree>
         </field>
     </record>
 
-    <record id="create_member_action" model="ir.actions.act_window">
-        <field name="name">create member</field>
+    <record id="games_fees_action" model="ir.actions.act_window">
+        <field name="name">Fees Receipt</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">create.member</field>
+        <field name="res_model">games.fees</field>
         <field name="view_mode">tree,form</field>
     </record>
-    <menuitem id="main_menu_sports_club"
-              name="Sports Club"
-              sequence="1"/>
-    <menuitem id="member_ship_menu"
-              name="Member ship"
-              parent="main_menu_sports_club"
-              sequence="10"/>
-    <menuitem id="create_member_menu"
-              name="Create Member"
+
+    <menuitem id="games_fees_menu"
+              name="Fees Receipt"
               parent="member_ship_menu"
-              action="create_member_action"
-              sequence="10"/>
+              action="games_fees_action"
+              sequence="15"/>
 
 </odoo>
